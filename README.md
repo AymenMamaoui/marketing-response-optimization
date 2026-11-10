@@ -38,3 +38,8 @@ Build an end-to-end Data Science pipeline that:
 - Matplotlib / Seaborn
 - FastAPI
 - Docker
+
+## Data Sources
+
+- [Marketing Campaign Dataset](https://www.kaggle.com/datasets/rodsaldanha/arketing-campaign/data)
+- [Marketing A/B Testing Dataset](https://www.kaggle.com/datasets/faviovaz/marketing-ab-testing/data)
