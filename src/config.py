@@ -5,7 +5,7 @@
         - column's separator
         - date format
         - Our target
-        - new columns names in case we rename them 
+        - new columns names in case we rename them ...
 """
 from pathlib import Path
 
@@ -17,6 +17,13 @@ PROCESSED_DATA_DIR = PROJECT_ROOT / "data" / "processed"
 
 MARKETING_FILE = RAW_DATA_DIR / "marketing_campaign.csv"
 AB_TEST_FILE =  RAW_DATA_DIR / "marketing_AB.csv"
+
+FIGURES_DIR = PROJECT_ROOT / "reports" / "figures"
+
+TRAIN_FILE = PROCESSED_DATA_DIR / "train.csv"
+TEST_FILE = PROCESSED_DATA_DIR / "test.csv"
+TEST_SIZE = 0.2
+
 MARKETING_SEP = ";"
 DATE_FORMAT = "%Y-%m-%d"
 

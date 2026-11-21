@@ -1,6 +1,6 @@
 import pandas as pd
 from src.config import MARKETING_SEP, MARKETING_FILE, MARKETING_COLUMNS, AB_TEST_FILE, DATE_FORMAT, AB_TEST_COLUMNS, DATE_COL, AB_RENAMED_MAP, AB_TARGET, AB_INDEX_COL
-
+from src.config import TRAIN_FILE, TEST_FILE
 
 # Validating the dataset
 def validate_columns(df, expected, name):
@@ -26,5 +26,15 @@ def load_ab_test():
 
     return ab_data
 
+
+PROCESSED_FILES = {"train": TRAIN_FILE, "test": TEST_FILE}
+# Loading the splits (train or test)
+def load_processed(split: str) -> pd.DataFrame:
+    if split not in PROCESSED_FILES:
+        raise ValueError(f"split must be one of {list(PROCESSED_FILES)}, got '{split}'")
+    path = PROCESSED_FILES[split]
+    df = pd.read_csv(path)
+    df[DATE_COL] = pd.to_datetime(df[DATE_COL], format=DATE_FORMAT)
+    return df
 
 
